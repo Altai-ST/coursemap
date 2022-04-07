@@ -1,0 +1,6 @@
+.App{
+    width: 1440px;
+    @media screen and (orientation: portrait) {
+        width: 844px;
+    }
+}
