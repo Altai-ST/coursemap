@@ -1,0 +1,9 @@
+.cardsCon{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow-y: auto;
+    max-height: 300px;
+    justify-content: space-between;
+}

@@ -8,13 +8,16 @@ export default function Navigate() {
       <Outlet/>
       <div className={styled.nav}>
         <Link to="/">
-          <box-icon type="solid" name="home"></box-icon>
+          <box-icon type="solid" name="home" color='#656070'></box-icon>
         </Link>
         <Link to='/reg'>
-          <box-icon type="solid" name="user-circle"></box-icon>
+          <box-icon type="solid" name="user-circle" color='#656070'></box-icon>
         </Link>
-        <box-icon type="solid" name="envelope"></box-icon>
-        <box-icon type="solid" name="map"></box-icon>
+        <box-icon type="solid" name="envelope" color='#656070'></box-icon>
+        <Link to='/price'>
+          <box-icon name='purchase-tag' type='solid' color='#656070' ></box-icon>
+        </Link>
+        
         {/* <Link>
           
         </Link>
