@@ -1,35 +1,48 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
+import {createSlice} from "@reduxjs/toolkit"
+import { fetchUser } from "../../containers/httpRequest";
+
 
 const userData ={
-    userList:[]
+    userData:[],
+    course:[],
+    categoryCourse:[[],[],[]],
+    tutor:[],
+    status:'',
+    currentCourse:'',
 }
-
-
-export const fetchUser = createAsyncThunk(
-    'userSlice/fetchUser',
-    async function(){
-        const response = await fetch('https://jsonplaceholder.typicode.com/users')
-        const data = await response.json();
-        return data
-    }
-)
-
+// createSlice смотрите в документации redux-toolkit. Оно отвечает для хранения данных в фронте
 const userSlice = createSlice({
     name:'userSlice',
     initialState: userData,
     reducers:{
         saveUser(state, action){
-            state.userList.push(action.payload)
+            state.userData.push(action.payload)
+        },
+        saveCourse(state, action){
+            state.course = action.payload
+        },
+        saveCategory(state, action){
+            state.categoryCourse.push(action.payload)
+        },
+        saveTutor(state, action){
+            state.tutor = action.payload
+        },
+        setCurrentCourse(state, action){
+            state.currentCourse = action.payload
         }
     },
     extraReducers:{
-        [fetchUser.pending]: (state, action)=>{},
-        [fetchUser.fulfilled]: (state, action)=>{
-            state.userList = action.payload;
-        },
-        [fetchUser.rejected]: (state, action)=>{},
+        // [fetchUser.pending]: (state, action)=>{
+        //     state.status = "Loading"
+        // },
+        // [fetchUser.fulfilled]: (state, action)=>{
+        //     state.status = "Ok"
+        // },
+        // [fetchUser.rejected]: (state, action)=>{
+        //     state.status = "Error"
+        // },
     }
 })
 
-export const {saveUser} = userSlice.actions;
+export const {saveUser, saveCourse, saveCategory, saveTutor} = userSlice.actions;
 export default userSlice.reducer

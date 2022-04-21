@@ -1,7 +1,10 @@
 import React, { useState } from 'react'
 import styled from './tabsBlock.module.scss'
 
+
+// Навигационная панель категорий
 export default function TabsBlock(props) {
+    // Состояние кнопок навигации
     const [btnState, setBtnState] = useState({
         btn1: true,
         btn2: false,
@@ -11,6 +14,7 @@ export default function TabsBlock(props) {
         btn6: false,
     })
 
+    // функция обрабатываемая нажатие кнопки навигации
     const handleClick = (val)=>{
         if(val.target.name === 'btn1'){
             
@@ -47,7 +51,10 @@ export default function TabsBlock(props) {
         <button name='btn5' className={btnState.btn5 ? styled.nav_btn_active : styled.nav_btn} onClick={handleClick}>{props.nav[4]}</button>
         <button name='btn6' className={btnState.btn6 ? styled.nav_btn_active : styled.nav_btn} onClick={handleClick}>{props.nav[5]}</button>
       </div>
-      {btnState.btn1 ? <div>{props.content}</div> : btnState.btn2 ? <>{props.content2}</> : btnState.btn4 ? <div>{props.content3}</div> : <div></div>}
+      {btnState.btn1 ? 
+      <div>{props.content}</div> : btnState.btn2 ? <>{props.content2}</> : 
+      btnState.btn4 ? <div>{props.content3}</div> : btnState.btn3 ? <div>{props.content4}</div> : 
+      <div></div>}
     </div>
   )
 }

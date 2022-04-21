@@ -8,7 +8,9 @@ import store from './store/index'
 
 ReactDOM.render(
   <React.StrictMode>
+    {/* Подключение библиотеки react-route-dom v6*/}
     <BrowserRouter>
+    {/* Подключение библиотеки react-redux*/}
     <Provider store={store}>
       <App />
     </Provider>

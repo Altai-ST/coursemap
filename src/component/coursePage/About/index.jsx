@@ -1,10 +1,11 @@
 import React from "react";
 import styled from './about.module.scss'
 
-export default function About() {
+export default function About(props) {
+  // информация о организации
   return (
     <div className={styled.container}>
-      <span className={styled.title}>OGOGO GROUP</span>
+      <span className={styled.title}>{props.title}</span>
       <div className={styled.star}>
           <box-icon
         name="star"
@@ -37,13 +38,10 @@ export default function About() {
         color="#ffff00"
       ></box-icon>
       </div>
-      <span className={styled.cat}>Курсы IT</span>
-      <span className={styled.num}>154 отзыва</span>
+      <span className={styled.cat}>{props.category}</span>
+      <span className={styled.num}>{props.comment}</span>
       <p className={styled.text}>
-        Разнообразный и богатый опыт консультация с широким активом обеспечивает
-        широкому кругу. Товарищи! постоянное информационно-пропагандистское
-        обеспечение нашей деятельности позволяет выполнять важные задания по
-        разработке модели развития.
+        {props.text}
       </p>
     </div>
   );

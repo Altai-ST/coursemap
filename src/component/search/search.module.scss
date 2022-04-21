@@ -1,0 +1,17 @@
+.container{
+    display: flex;
+    flex-direction: row;
+    margin: 10px 0;
+    align-items: center;
+    width: 293px;
+    background-color: #F7F7F7;
+    .search{
+        padding: 10px 15px;
+        width: 253px;
+        background-color: #F7F7F7;
+        border: none;
+    }
+    .iconss{
+        margin:4px 8px 0;
+    }
+}
